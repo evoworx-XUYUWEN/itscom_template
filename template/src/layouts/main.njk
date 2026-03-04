@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+  <head>
+    <meta charset="UTF-8">
+    {%- if(pageTitle) %}
+      <title>{{ pageTitle }}｜【公式】イッツコム</title>
+    {%- else %}
+      <title>{{ site.title }}</title>
+    {%- endif %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://www.itscom.co.jp/404.html">
+    <link rel="apple-touch-icon" href="/common/gjslkq000000094z-img/gjslkq0000000957.png">
+    <link rel="icon" href="/common/gjslkq000000094z-att/favicon.ico">
+    <meta name="robots" content="noodp,noydir">
+    <meta name="format-detection" content="telephone=no">
+
+    {% if(pageDescription) -%}
+      <meta name="description" content="{{ pageDescription }}">
+    {% else -%}
+      <meta name="description" content="{{ description }}">
+    {% endif -%}
+
+    {%- if(pageKeywords) -%}
+      <meta name="keywords" content="{{ pageKeywords }}">
+    {% else -%}
+      <meta name="keywords" content="{{ keywords }}">
+    {% endif -%}
+
+    <!-- OGP -->
+    <meta property="og:title" content="{{ pageTitle }}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{ pageName | pageUrl }}">
+    <meta property="og:image" content="{{ pageOgpImage | ogpPath }}">
+    {%- if(pageDescription) %}
+      <meta property="og:description" content="{{ pageDescription }}">
+    {%- else %}
+      <meta property="og:description" content="{{ description }}">
+    {%- endif %}
+    <meta property="og:locale" content="ja_JP">
+    <meta property="fb:app_id" content="1488639804719704">
+
+    <!-- twitter cards -->
+    {%- if(pageTitle) %}
+      <meta property="twitter:title" content="{{ pageTitle }}">
+    {%- else %}
+      <meta property="twitter:title" content="{{ title }}">
+    {%- endif %}
+    {%- if(pageDescription) %}
+      <meta name="twitter:description" content="{{ pageDescription }}">
+    {%- else %}
+      <meta name="twitter:description" content="{{ description }}">
+    {%- endif %}
+    <meta name="twitter:url" content="{{ pageOgpImage | ogpPath }}">
+    <meta name="twitter:image" content="{{ path }}{{ pageOgpImage }}">
+
+    <!-- コンテンツ独自css,jsの読み込み -->
+    <link rel="stylesheet" href="/src/css/styles.scss"/>
+    <script src="/src/js/main.js" type="module"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+    {% block file %}{% endblock %}
+  </head>
+
+  <body>
+    {% include "_includes/header.njk" %}
+
+    <!-- ページコンテンツここから -->
+    {% block contents %}{% endblock %}
+    <!-- ページコンテンツここまで -->
+
+    {% include "_includes/footer.njk" %}
+  </body>
+</html>
