@@ -1,99 +1,64 @@
-PROMPT: global_rules
+PROMPT: global_rules_lite
 
-You are generating Nunjucks (.njk) templates and SCSS for an existing production project.
-Do NOT generate build configs. Do NOT change Vite settings.
+Generate Nunjucks (`.njk`) and SCSS for this existing project only.
+Do not generate build/tool configs.
 
-==================================================
-A) PROJECT TEMPLATE SYSTEM (MUST FOLLOW)
-==================================================
+## 1) LP workflow (must follow)
 
-- Nunjucks root is: ./src
-- Page entry files must be created under: src/pages/
-- Includes must be created under: src/_includes/
+For LP production page tasks:
 
-FILE OUTPUT RULES
-1) Page entry:
-   src/pages/{page}.njk
+- Do not create an extra page.
+- Rename `src/pages/lp/plan/template.njk` to `src/pages/lp/plan/{projectName}.njk`.
+- In that page, replace `{% set pageName = "template" %}` with `{% set pageName = "{projectName}" %}`.
+- Replace all `p-sample` classes with `p-{projectName}`.
 
-2) Page modules (page-specific):
-   src/_includes/modules/{page}/{module}.njk
+## 2) `.env` sync (must read)
 
-3) Reusable components:
-   src/_includes/components/{component}.njk
+- Read `.env`.
+- Change `DIRECTORY_NAME` from `"template"` to `"{projectName}"`.
+- Keep `ASSETS_PATH` following current project convention unless explicitly requested to change.
 
-INCLUDE RULES
-- Always wrap include paths with includePath()
-- Pages compose modules via:
-  {% include includePath('../_includes/modules/{page}/{module}.njk') %}
+## 3) Paths and responsibility (must follow)
 
-ASSET PATH RULES (MUST USE FILTERS)
-- Images: use imgPath filter
-  <img src="{{ 'assets/img/foo.png' | imgPath }}" alt="">
-- OGP: use ogpPath filter
-- Links: use hrefPath filter
-- Page urls: use pageUrl filter
-- Do NOT hardcode production asset paths.
+- Page entry: `src/pages/lp/plan/{projectName}.njk`
+- Page modules: `src/_includes/modules/{projectName}/{module}.njk`
+- Reusable components: `src/_includes/components/{component}.njk`
+- Page files only include modules; modules include components.
 
-CONTENT SAFETY
-- Do NOT generate real business/marketing claims.
+## 4) Include rules (must follow)
+
+- Always use `includePath()`.
+- Page -> module:
+  `{% include includePath('../_includes/modules/{projectName}/{module}.njk') %}`
+- Module -> component:
+  `{% include includePath('../../components/{component}.njk') %}`
+
+## 5) Path filters (must follow)
+
+- Images: `imgPath` (example: `'/assets/img/xxx.png' | imgPath`)
+- Links: `hrefPath`
+- Page URL: `pageUrl`
+- OGP: `ogpPath`
+- Never hardcode production paths.
+
+## 6) Class naming (BEM + prefix)
+
+- Prefixes:
+  - `l-` layout
+  - `c-` reusable component
+  - `p-` page module
+  - `u-` utility
+  - `js-` JS hook only (never style)
+- BEM: `block`, `block__element`, `block--modifier`
+- kebab-case only
+- Element depth <= 2
+
+## 7) Content safety
+
 - Use placeholder copy only.
+- No real business or marketing claims.
 
-==================================================
-B) CSS NAMING SYSTEM (BEM + PREFIX) (MUST FOLLOW)
-==================================================
+## 8) Output discipline
 
-Use BEM + prefix architecture.
-
-prefix:
-l-  layout
-c-  reusable component
-p-  page module
-u-  utility
-js- javascript hook (NO STYLING)
-
-BEM format:
-Block
-Block__Element
-Block--Modifier
-
-Examples:
-c-card
-c-card__title
-c-card--featured
-
-Rules:
-1) kebab-case only
-2) BEM element depth <= 2 (no deep nesting)
-   Allowed: c-card__title, c-card__title--large
-   Not allowed: c-card__body__title
-3) Reuse classes/components when possible.
-4) js- classes are ONLY hooks. Never style js-.
-
-==================================================
-C) LAYOUT SYSTEM (GRID-FIRST) (MUST FOLLOW)
-==================================================
-
-Modules should use grid-based layout when possible.
-
-Module skeleton:
-<section class="p-{page}-{module}">
-  <div class="l-container">
-    <div class="p-{page}-{module}__grid">
-      <!-- slots -->
-    </div>
-  </div>
-</section>
-
-Slot names allowed:
-__media, __content, __meta, __actions, __aside, __list, __item
-
-Prefer grid-template-areas for responsive reordering.
-Avoid using order unless necessary.
-
-==================================================
-D) OUTPUT FORMAT (MUST FOLLOW)
-==================================================
-
-- Return: File tree first
-- Then: Each file content in separate code blocks with filename headers
-- No explanations
+- Output only what the task asks for.
+- No extra explanation unless requested.

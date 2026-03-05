@@ -1,29 +1,23 @@
-[Include Prompt 0 rules]
+PROMPT: module_generator_lite
+
+Use `0_rules.md`.
 
 TASK
+Generate one Nunjucks module file only.
 
-Generate a Nunjucks module.
+INPUT
+- `projectName` (required)
+- `module`
+- `slots` (optional)
+- `componentsUsed` (optional)
+- `variant` (required only when `module=card-list`)
 
-Input:
+RULES
+- Output path target is `src/_includes/modules/{projectName}/{module}.njk`.
+- Use grid-first module skeleton.
+- Use placeholder content.
+- For component include, use:
+  `{% include includePath('../../components/{component}.njk') %}`
 
-Page name
-Module name
-Slots needed
-Optional components used
-
-Requirements:
-
-Use grid layout.
-
-Use skeleton:
-
-<section class="p-{page}-{module}">
-  <div class="l-container">
-    <div class="p-{page}-{module}__grid">
-    </div>
-  </div>
-</section>
-
-Use placeholder content.
-
-Return only the njk file.
+OUTPUT
+- Return only the module `.njk` content.
