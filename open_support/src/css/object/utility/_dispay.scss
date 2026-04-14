@@ -1,0 +1,17 @@
+header, footer, .p-simple {
+  .u-sp {
+    display: block;
+
+    @include md {
+      display: none;
+    }
+  }
+
+  .u-pc {
+		display: none;
+
+		@include md {
+			display: block;
+		}
+  }
+}

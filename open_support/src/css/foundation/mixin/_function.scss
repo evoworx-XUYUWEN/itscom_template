@@ -1,0 +1,45 @@
+@use "sass:math";
+
+// ---------------------------------------------
+// px→remの計算
+// ---------------------------------------------
+@function rem($px, $base: 16) {
+  @return math.div($px, $base) * 1.6rem;
+}
+
+// ---------------------------------------------
+// px→vwの計算
+// ---------------------------------------------
+@function vw($px, $reference) {
+	@if $reference == 'pc' {
+		@return math.div($px, 1280) * 100vw;
+	} @else if $reference == 'sp' {
+		@return math.div($px, 400) * 100vw;
+	} @else if $reference == 'sp2x' {
+		@return math.div($px, 750) * 100vw;
+	} @else {
+		@return math.div($px, $reference) * 100vw;
+	}
+}
+
+// ---------------------------------------------
+// px→vhの計算
+// ---------------------------------------------
+@function vh($px, $reference) {
+	@if $reference == 'pc' {
+		@return math.div($px, 700) * 100vh;
+	} @else if $reference == 'sp' {
+		@return math.div($px, 375) * 100vh;
+	} @else if $reference == 'sp2x' {
+		@return math.div($px, 750) * 100vh;
+	} @else {
+		@return math.div($px, $reference) * 100vw;
+	}
+}
+
+// ---------------------------------------------
+// px→%の計算
+// ---------------------------------------------
+@function per($px, $base: 375) {
+  @return math.div($px, $base) * 100%;
+}

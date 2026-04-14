@@ -1,0 +1,33 @@
+{% extends 'layouts/main.njk' %}
+
+{# META ================================= -#}
+{% set pageName = "open_support" -%}
+{% set pageTitle = "" -%}
+{% set pageDescription = "" -%}
+{% set pageKeywords = "" -%}
+
+{# OGP ================================= -#}
+{% set pageOgpImage = "img/share_250710.png" -%}
+
+{# 独自ファイル読み込み ================================= -#}
+{% block file %}{% endblock %}
+
+{% block contents -%}
+	{# HTML編集可能エリア/ここから ================================= #}
+	<div class="p-opensupport">
+		{# <h1 class="p-opensupport__heading">タイトル</h1>
+		<p class="p-opensupport__text">テキスト</p> #}
+
+		<!-- 【hrefの記述】 ステージングでは絶対パス、本番では相対パスに変換されます -->
+		{# <a href="{{ '/about/' | hrefPath }}">リンク</a> #}
+
+		<!-- 【srcの記述】 ステージングではルートパス、本番ではassetから始まり語尾に?$staticlink$が付与されます -->
+		{# <img class="p-opensupport__img" src="{{ '/assets/img/opensupport.png' | imgPath }}" alt=""> #}
+
+		{# <div class="p-opensupport__background"></div> #}
+		{% include "includes/kv.njk" %}
+
+	</div>
+	{# HTML編集可能エリア/ここまで ================================= #}
+
+{% endblock %}
