@@ -1,0 +1,72 @@
+{% set detail = {
+    sml: "Detail",
+    big: "タイトルテキスト",
+    explain: "テキストテキストテキストテキストテキストテキスト<br>テキストテキスト"
+} %}
+
+{% set detailCards = [
+    {
+        icon: "detail_icon_01.png",
+        title: "タイトルテキスト",
+        desc: [
+            "テキストテキストテキストテキスト",
+            "テキストテキストテキストテキスト"
+        ]
+    },
+    {
+        icon: "detail_icon_02.png",
+        title: "タイトルテキスト",
+        desc: [
+            "テキストテキストテキストテキスト",
+            "テキストテキストテキストテキスト"
+        ]
+    },
+    {
+        icon: "detail_icon_03.png",
+        title: "タイトルテキスト",
+        desc: [
+            "テキストテキストテキストテキスト",
+            "テキストテキストテキストテキスト"
+        ]
+    },
+    {
+        icon: "detail_icon_04.png",
+        title: "タイトルテキスト",
+        desc: [
+            "テキストテキストテキストテキスト",
+            "テキストテキストテキストテキスト"
+        ]
+    }
+] %}
+
+<div class="p-opensupport-detail">
+    <div class="p-opensupport-detail-ttl">
+        <p class="p-opensupport-detail-ttl__sml">{{ detail.sml }}</p>
+        <div class="p-opensupport-detail-ttl__big">
+            <p class="p-opensupport-detail-ttl__big--top">
+                {{ detail.big }}
+            </p>
+        </div>
+        <div class="p-opensupport-detail-ttl__explain">
+            <p>{{ detail.explain | safe }}</p>
+        </div>
+    </div>
+    <div class="p-opensupport-detail-content">
+        {% for card in detailCards %}
+        <div class="p-opensupport-detail-content__card">
+            <div class="p-opensupport-detail-content__card--head">
+                <p class="p-opensupport-detail-content__card--icon">
+                    <img src="{{ ('/assets/img/' + card.icon) | imgPath }}" alt="">
+                </p>
+                <p class="p-opensupport-detail-content__card--title">{{ card.title }}</p>
+            </div>
+            <div class="p-opensupport-detail-content__card--body">
+                {% for text in card.desc %}
+                <p>{{ text }}</p>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>

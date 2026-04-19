@@ -1,0 +1,23 @@
+.p-opensupport-chatwithus {
+  padding: 98px 0 64px;
+  background-image: url($base-dir + "img/need_background_dots.png");
+  background-size: 49px 25px;
+  background-position: start;
+  //。p-opensupport-chatwithus-explain
+  &-explain {
+    color: #4A3535;
+    text-align: center;
+    font-feature-settings: 'palt' on;
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 1.79;
+    letter-spacing: 0.04em;
+  }
+  //.p-opensupport-chatwithus__btn
+  &__btn {
+    width: 680px;
+    height: 86px;
+    margin-inline: auto;
+    margin-bottom: 72px;
+  }
+}

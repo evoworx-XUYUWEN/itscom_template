@@ -1,14 +1,17 @@
+$font-noto-sans-jp: "Noto Sans JP", sans-serif;
+$font-zen-kaku: "Zen Kaku Gothic Antique", sans-serif;
+
 @font-face {
-  font-family: 'FuturaCyrillic';
-  src: url('../../../assets/font/FuturaCyrillicBold.ttf') format('truetype');
-  font-weight: 700;
+  font-family: 'Poppins';
+  src: url('../../../assets/font/Poppins-Regular.ttf') format('truetype');
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
-@font-face {
-  font-family: 'FuturaCyrillic';
-  src: url('../../../assets/font/FuturaCyrillicHeavy.ttf') format('truetype');
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
+// @font-face {
+//   font-family: 'FuturaCyrillic';
+//   src: url('../../../assets/font/FuturaCyrillicHeavy.ttf') format('truetype');
+//   font-weight: 800;
+//   font-style: normal;
+//   font-display: swap;
+// }

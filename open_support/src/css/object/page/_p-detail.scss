@@ -1,0 +1,107 @@
+.p-opensupport-detail {
+  background-color: #FBF7E7;
+  padding: 100px 0 168px;
+  //。p-opensupport-detail-ttl
+  &-ttl {
+    margin-bottom: 72px;
+    //.p-opensupport-detail-ttl__sml
+    &__sml {
+      color: #DA4630;
+      text-align: center;
+      font-family: Poppins;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.5;
+      letter-spacing: 0.04em;
+      margin-bottom: 10px;
+    }
+    //.p-opensupport-detail-ttl__big
+    &__big {
+      margin-bottom: 32px;
+      //.p-opensupport-detail-ttl__big--top
+      &--top {
+        font-family: $font-zen-kaku;
+        color: #4A3535;
+        font-feature-settings: 'palt' on;
+        font-size: 45px;
+        font-weight: 700;
+        line-height: 1.4;
+        letter-spacing: -10.35px;
+        text-align: center;
+      }
+    }
+    //.p-opensupport-detail-ttl__explain
+    &__explain {
+      color: #4A3535;
+      text-align: center;
+      font-feature-settings: 'palt' on;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.79; /* 28.64px */
+      letter-spacing: 0.04em;
+    }
+  }
+  //。p-opensupport-detail-content
+  &-content {
+    display: flex;
+    justify-content: center;
+    gap: 36px;
+    //.p-opensupport-detail-content__card
+    &__card {
+      &:nth-of-type(3) {
+        position: relative;
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 133px;
+          height: 93px;
+          top: -26px;
+          right: -66px;
+          background-image: url(#{$base-dir}img/detail_card_3rd_foam.png);
+          background-position: center;
+          background-size: cover;
+          z-index: 1;
+        }
+      }
+      //.p-opensupport-detail-content__card--head
+      &--head {
+        background-color: #5880B7;
+        padding: 0 0 10px;
+        width: 210px;
+        // border-radius: ;
+      }
+      //.p-opensupport-detail-content__card--icon
+      &--icon {
+        width: 52px;
+        margin-inline: auto;
+      }
+      //.p-opensupport-detail-content__card--title
+      &--title {
+        color: #FFF;
+        text-align: center;
+        font-feature-settings: 'palt' on;
+        font-size: 23px;
+        font-weight: 600;
+        line-height: 1.6; /* 36.8px */
+        letter-spacing: 0.04em;
+      }
+      //.p-opensupport-detail-content__card--body
+      &--body {
+        width: 210px;
+        height: 180px;
+        background-color: #fff;
+        background-image: url($base-dir + "img/detail_card_body_bg.png");
+        background-position: center;
+        background-size: cover;
+        padding-top: 28px;
+      }
+      //.p-opensupport-detail-content__card--item
+      &--item {
+        width: fit-content;
+        margin-inline: auto;
+        padding-bottom: 8px;
+      }
+    }
+  }
+}

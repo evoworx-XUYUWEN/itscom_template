@@ -1,0 +1,66 @@
+.p-opensupport-service {
+  background-color: #FBF7E7;
+  padding: 100px 0 112px;
+  //。p-opensupport-service-ttl
+  &-ttl {
+    margin-bottom: 72px;
+    //.p-opensupport-service-ttl__sml
+    &__sml {
+      color: #DA4630;
+      text-align: center;
+      font-family: Poppins;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.5;
+      letter-spacing: 0.04em;
+      margin-bottom: 10px;
+    }
+    //.p-opensupport-service-ttl__big
+    &__big {
+      //.p-opensupport-service-ttl__big--top
+      &--top {
+        font-family: $font-zen-kaku;
+        color: #4A3535;
+        font-feature-settings: 'palt' on;
+        font-size: 45px;
+        font-weight: 700;
+        line-height: 1.4;
+        letter-spacing: -10.35px;
+        text-align: center;
+      }
+      //.p-opensupport-service-ttl__big--bottom
+      &--bottom {
+        width: 580px;
+        margin-inline: auto;
+      }
+    }
+  }
+  //。p-opensupport-service-content
+  &-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 58px;
+    //.p-opensupport-service-content__left
+    &__left {
+      color: #4A3535;
+      font-feature-settings: 'palt' on;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1.8;
+      letter-spacing: 0.06em;
+      .red {
+        color: #DA4630;
+      }
+      p {
+        &:not(:last-of-type){
+          margin-bottom: 24px;
+
+        }
+      }
+    }
+    //.p-opensupport-service-content__right
+    &__right {
+    }
+  }
+}

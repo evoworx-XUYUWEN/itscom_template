@@ -1,0 +1,37 @@
+{% set service = {
+    sml: "About Our Services",
+    big: "テキストテキ",
+    body: {
+        top:    "テキストテキストテキストテキストテキストテキスト<br>テキストテキスト",
+        mid:    "テキストテキストテキストテキストテキストテキスト<br>テキストテキスト",
+        bottom: "テキストテキストテキストテキストテキストテキスト<br>テキストテキスト"
+    },
+    imgs: {
+        ttlBottom: { src: "service_ttl_big_bottom.png", width: "580" },
+        right:     { src: "service_cont_right.png",     width: "509" }
+    }
+} %}
+
+<div class="p-opensupport-service">
+    <div class="p-opensupport-service-ttl">
+        <p class="p-opensupport-service-ttl__sml">{{ service.sml }}</p>
+        <div class="p-opensupport-service-ttl__big">
+            <p class="p-opensupport-service-ttl__big--top">
+                {{ service.big }}
+            </p>
+            <p class="p-opensupport-service-ttl__big--bottom">
+                <img class="p-opensupport__img" src="{{ ('/assets/img/' + service.imgs.ttlBottom.src) | imgPath }}" alt="" width="{{ service.imgs.ttlBottom.width }}">
+            </p>
+        </div>
+    </div>
+    <div class="p-opensupport-service-content">
+        <div class="p-opensupport-service-content__left">
+            <p class="p-opensupport-service-content__left--top">{{ service.body.top | safe }}</p>
+            <p class="p-opensupport-service-content__left--mid">{{ service.body.mid | safe }}</p>
+            <p class="p-opensupport-service-content__left--bottom">{{ service.body.bottom | safe }}</p>
+        </div>
+        <p class="p-opensupport-service-content__right">
+            <img class="p-opensupport__img" src="{{ ('/assets/img/' + service.imgs.right.src) | imgPath }}" alt="" width="{{ service.imgs.right.width }}">
+        </p>
+    </div>
+</div>

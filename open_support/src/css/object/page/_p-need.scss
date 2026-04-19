@@ -1,0 +1,200 @@
+.p-opensupport-need {
+  padding: 98px 0 0;
+  background-image: url($base-dir + "img/need_background_dots.png");
+  background-size: 49px 25px;
+  background-position: start;
+  &__btn {
+    width: 680px;
+    height: 86px;
+    margin-inline: auto;
+    margin-bottom: 72px;
+  }
+  &-content {
+    position: relative;
+    background-color: #CCE0FF;
+    max-width: 1200px;
+    margin-inline: auto;
+    border-radius: 30px;
+    padding: 48px 54px 51px;
+    margin: 0 120px 80px;
+    &::before {
+      content: "";
+      position: absolute;
+      background-image: url($base-dir + "img/need_content_bg.png");
+      background-repeat: no-repeat;
+      background-size: 67px 57px;
+      width: 67px;
+      height: 58px;
+      bottom: -57px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &-ttl {
+      margin-bottom: 38px;
+      //。p-opensupport-need-content-ttl__sml
+      &__sml {
+        font-size: 20px;
+        letter-spacing: 0.04em;
+        font-weight: 600;
+        line-height: 1.5;
+        text-align: center;
+        color: #4A3535;
+        margin-bottom: 10px;
+      }
+      //.p-opensupport-need-content-ttl__big
+      &__big {
+        width: fit-content;
+        margin-inline: auto;
+        font-family: $font-zen-kaku;
+        color: #4A3535;
+        display: flex;
+        align-items: end;
+        gap: 5px;
+        line-height: 1;
+        &--dot {
+          display: flex;
+          font-size: 36px;
+          font-weight: 700;
+          line-height: 1;
+          letter-spacing: 0.09em;
+          p {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            &::after {
+              content: "";
+              position: absolute;
+              width: 5px;
+              height: 5px;
+              border-radius: 50%;
+              background-color: #4A3535;
+              margin-top: 5px;
+              bottom: -16px;
+            }
+          }
+        }
+        //.p-opensupport-need-content-ttl__big--nor
+        &--nor {
+          font-weight: 700;
+          font-size: 29px;
+          line-height: 1;
+        }
+      }
+    }
+    &-point {
+      position: relative;
+      overflow: hidden;
+      //.p-opensupport-need-content-point__kv
+      &__kv {
+        width: 367px;
+        margin-inline: auto;
+        margin-top: 7px;
+      }
+      //.p-opensupport-need-content-point__item
+      &__item {
+        position: absolute;
+        img {
+          width: 100%;
+          height: auto;
+        }
+        &--1 {
+          top: 3px;
+          left: 24px;
+          width: 301px;
+        }
+        &--2 {
+          top: 78px;
+          left: 0;
+          width: 249px;
+        }
+        &--3 {
+          top: 153px;
+          left: 74;
+          width: 247px;
+          // transform: translateY(-50%);
+        }
+        &--4 {
+          top: 0;
+          right: 12px;
+          width: 331px;
+          // transform: translateY(-50%);
+        }
+        &--5 {
+          top: 72px;
+          right: 0;
+          width: 283px;
+        }
+        &--6 {
+          top: 170px;
+          right: 12px;
+          width: 302px;
+        }
+      }
+    }
+  }
+  //.p-opensupport-need-content-appeal
+  &-appeal {
+    //.p-opensupport-need-appeal__ttl
+    &__ttl {
+      margin-bottom: 14px;
+      //.p-opensupport-need-appeal__ttl--sml
+      &--sml {
+        color: #4A3535;
+        text-align: center;
+        font-size: 21px;
+        font-weight: 600;
+        line-height: 1.5;
+        letter-spacing: 0.0.04em;
+        margin-bottom: 3px;
+      }
+      //.p-opensupport-need-appeal__ttl--big
+      &--big {
+        width: 439px;
+        margin-inline: auto;
+        position: relative;
+        font-family: $font-zen-kaku;
+        color: #DA4630;
+        text-align: center;
+        font-feature-settings: 'palt' on;
+        font-size: 38px;
+        font-weight: 700;
+        line-height: 1.5;
+        letter-spacing: -7.22px;
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background-image: url($base-dir + "img/need_appeal_deco.png");
+          background-repeat: no-repeat;
+          background-size: contain;
+          width: 42px;
+          height: 48px;
+        }
+        &::before {
+          top: 16px;
+          left: -53px;
+        }
+        &::after {
+          top: 16px;
+          right: -53px;
+          transform: translateY(-50%) scaleX(-1);
+        }
+      }
+    }
+    //.p-opensupport-need-appeal__img
+    &__img {
+      width: 390px;
+      margin-inline: auto;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+  }
+  
+
+}

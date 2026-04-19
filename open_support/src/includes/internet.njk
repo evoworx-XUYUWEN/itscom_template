@@ -1,0 +1,84 @@
+{% set internet = {
+    ttl: {
+        sml:    "テキスト",
+        big:    "テキスト",
+        smlSub: "テキスト!"
+    },
+    mid: "テキストテキストテキスト<br>テキストテキストテキスト<br>Wi-テキストテキストテキスト...",
+    explain: {
+        red:    "テキストテキスト",
+        normal: "テキストテキスト"
+    },
+    items: [
+        { ttl: "テキスト", img: "opensupport.png" },
+        { ttl: "テキスト", img: "opensupport.png" },
+        { ttl: "テキスト", img: "opensupport.png" }
+    ],
+    steps: [
+        { ttl: "テキスト", img: "opensupport.png" },
+        { ttl: "テキスト", img: "opensupport.png" },
+        { ttl: "テキスト", img: "opensupport.png" }
+    ]
+} %}
+
+<div class="p-opensupport-internet">
+    <div class="p-opensupport-internet-container">
+        <div class="p-opensupport-internet-box js-animate-pseudo">
+            <div class="p-opensupport-internet-box__ttl">
+                <span class="p-opensupport-internet-box__ttl--sml">{{ internet.ttl.sml }}</span>
+                <span class="p-opensupport-internet-box__ttl--big">{{ internet.ttl.big }}</span>
+                <span class="p-opensupport-internet-box__ttl--sml">{{ internet.ttl.smlSub }}</span>
+            </div>
+            <div class="p-opensupport-internet-box__mid">
+                <p>{{ internet.mid | safe }}</p>
+            </div>
+            <div class="p-opensupport-internet-box__bottom">
+                <div class="p-opensupport-internet-box__explain">
+                    <p class="p-opensupport-internet-box__explain--red">{{ internet.explain.red }}</p>
+                    <p class="p-opensupport-internet-box__explain--normal">{{ internet.explain.normal }}</p>
+                </div>
+                <div class="p-opensupport-internet-box__card">
+                    {% for item in internet.items %}
+                        <div class="p-opensupport-internet-box__item">
+                            <div class="p-opensupport-internet-box__item--ttl">
+                                <p>{{ item.ttl | safe }}</p>
+                            </div>
+                            <div class="p-opensupport-internet-box__item--box">
+                                <p class="p-opensupport-internet-box__item--icon">
+                                    <img class="p-opensupport__img" src="{{ ('/assets/img/' + item.img) | imgPath }}" alt="" width="53"  height="53">
+                                </p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="p-opensupport-internet-workflow">
+            <div class="p-opensupport-internet-workflow-ttl">
+                <img class="p-opensupport__img" src="{{ '/assets/img/internet_workflow_ttl.png' | imgPath }}" alt="" width="715" height="113">
+            </div>
+            <div class="p-opensupport-internet-workflow-card">
+                {% for step in internet.steps %}
+                    <div class="p-opensupport-internet-workflow-card-step">
+                        <div class="p-opensupport-internet-workflow-card-step__ttl">
+                            <p>{{ step.ttl | safe }}</p>
+                        </div>
+                        <div class="p-opensupport-internet-workflow-card-step__cicle">
+                            <p class="p-opensupport-internet-card-step__icon">
+                                <img src="{{ ('/assets/img/' + step.img) | imgPath }}" alt="" width="112"  height="112">
+                            </p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <a href="{{ '/about/' | hrefPath }}" class="c-btn c-btn--sml p-opensupport-internet__btn">
+            <span>まずは無料であなたの店舗のWi-Fi診断</span>
+            <p class="c-btn__cicle c-btn__cicle--sml">
+                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="14" viewBox="0 0 19 14" fill="none">
+                    <path d="M18.1912 7.4502C18.5517 7.08972 18.5517 6.50526 18.1912 6.14477L12.3167 0.270346C11.9563 -0.090138 11.3718 -0.090138 11.0113 0.270346C10.6508 0.63083 10.6508 1.21529 11.0113 1.57577L16.233 6.79749L11.0113 12.0192C10.6508 12.3797 10.6508 12.9641 11.0113 13.3246C11.3718 13.6851 11.9563 13.6851 12.3167 13.3246L18.1912 7.4502ZM0 6.79749V7.72056H17.5385V6.79749V5.87441H0V6.79749Z" fill="#DA4630"/>
+                </svg>
+            </p>
+        </a>
+    </div>
+</div>

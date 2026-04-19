@@ -1,0 +1,58 @@
+{% set howtodo = {
+    sml: "What to DO",
+    big: "テキストテキ",
+    explain: "テキストテキテキストテキテキストテキテキストテキ<br>テキストテキテキストテキテキストテキ<br>テキストテキテキストテキテキストテキテキストテキ",
+    imgs: {
+        bg: {
+            src: "howtodo_cont_bg.png",
+            width: "1199"
+        },
+        boxTop: {
+            src: "howtodo_cont_top.png",
+            width: "640"
+        },
+        boxMid: {
+            src: "howtodo_cont_mid.png",
+            width: "1106"
+        },
+        boxBtmLeft: {
+            src: "howtodo_cont_bottom_left.png",
+            width: "509"
+        },
+        boxBtmRight: {
+            src: "howtodo_cont_bottom_right.png",
+            width: "509"
+        }
+    }
+} %}
+
+<div class="p-opensupport-howtodo">
+    <div class="p-opensupport-howtodo-ttl">
+        <p class="p-opensupport-howtodo-ttl__sml">{{ howtodo.sml }}</p>
+        <div class="p-opensupport-howtodo-ttl__big">
+            <p class="p-opensupport-howtodo-ttl__big--top">
+                {{ howtodo.big }}
+            </p>
+        </div>
+        <div class="p-opensupport-howtodo-ttl__explain">
+            <p>{{ howtodo.explain | safe }}</p>
+        </div>
+    </div>
+    <div class="p-opensupport-howtodo-content">
+        <div class="p-opensupport-howtodo-content__box">
+            <p class="p-opensupport-howtodo-content__box--top">
+                <img class="p-opensupport__img" src="{{ ('/assets/img/' + howtodo.imgs.boxTop.src) | imgPath }}" alt="" width="{{ howtodo.imgs.boxTop.width }}">
+            </p>
+            <p class="p-opensupport-howtodo-content__box--mid">
+                <img class="p-opensupport__img" src="{{ ('/assets/img/' + howtodo.imgs.boxMid.src) | imgPath }}" alt="" width="{{ howtodo.imgs.boxMid.width }}">
+            </p>
+            <div class="p-opensupport-howtodo-content__box--bottom">
+                <p><img class="p-opensupport__img" src="{{ ('/assets/img/' + howtodo.imgs.boxBtmLeft.src) | imgPath }}" alt="" width="{{ howtodo.imgs.boxBtmLeft.width }}"></p>
+                <p><img class="p-opensupport__img" src="{{ ('/assets/img/' + howtodo.imgs.boxBtmRight.src) | imgPath }}" alt="" width="{{ howtodo.imgs.boxBtmRight.width }}"></p>
+            </div>
+        </div>
+        <p class="p-opensupport-howtodo-content__bg">
+            <img class="p-opensupport__img" src="{{ ('/assets/img/' + howtodo.imgs.bg.src) | imgPath }}" alt="" width="{{ howtodo.imgs.bg.width }}">
+        </p>
+    </div>
+</div>

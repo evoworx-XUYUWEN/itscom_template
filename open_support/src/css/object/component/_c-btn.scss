@@ -1,0 +1,35 @@
+.c-btn {
+  background-color: #DA4630;
+  border: #DA4630 2px solid;
+  border-radius: 10px;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+  font-family: $font-zen-kaku;
+  letter-spacing: 0.04em;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: normal;
+
+
+  @include md {
+
+  }
+  &__cicle {
+    position: absolute;
+    right: 33px;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include md {
+
+    }
+  }
+}

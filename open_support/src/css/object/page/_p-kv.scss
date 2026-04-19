@@ -1,0 +1,91 @@
+@keyframes kv-curtain-drop {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+.p-opensupport-kv {
+  background-color: #FBF7E7;
+  height: 760px;
+  overflow: hidden;
+  //。p-opensupport-kv-top
+  &-people {
+    display: flex;
+    justify-content: center;
+
+    &__item {
+      opacity: 0;
+      img {
+        width: 100%;
+        height: auto;
+      }
+      &--1 { width: 154px; margin-top: 7px; margin-right: 50px;}
+      &--2 { width: 161px; margin-top: 51px; margin-right: 43px;}
+      &--3 { width: 150px; margin-top: 61px; margin-right: 36px;}
+      &--4 { width: 156px; margin-top: 43px; margin-right: 38px;}
+      &--5 { width: 127px; margin-top: 66px; margin-right: 44px;}
+      &--6 { width: 153px; margin-top: 43px; }
+    }
+  }
+  &-top {
+    height: 89px;
+    background-image: url($base-dir + "img/kv_top.png");
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+    transform-origin: top;
+    animation: kv-curtain-drop 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    margin-bottom: 78px;
+  }
+  //。p-opensupport-kv-content
+  &-content {
+    width: 551px;
+    margin-inline: auto;
+
+    //.p-opensupport-kv-content__top
+    &__top {
+      width: 509px;
+      margin-inline: auto;
+      margin-bottom: 20px;
+      &::after {
+        content: "";
+        display: block;
+        height: 4px;
+        width: 525px;
+        margin-inline: auto;
+        background-image: radial-gradient(circle 2px at 50% 50%, #DA4630 100%, transparent 0);
+        background-size: 19px 4px;
+        background-repeat: repeat-x;
+        // background-position: left;
+        margin-left: -14px;
+      }
+    }
+    //.p-opensupport-kv-content__buttom
+    &__buttom {
+      text-align: center;
+      color: #4A3535;
+      font-feature-settings: 'palt' on;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 2;
+      letter-spacing: 0.08em;
+    }
+  }
+  //。p-opensupport-kv-ttl
+  &-ttl {
+    margin-bottom: 72px;
+    //.p-opensupport-kv-ttl__sml
+    &__sml {
+      width: 218px;
+      margin-inline: auto;
+      margin-bottom: 21px;
+    }
+    //.p-opensupport-kv-ttl__big
+    &__big {
+      width: 968px;
+      margin-inline: auto;
+    }
+  }
+}

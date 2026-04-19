@@ -1,3 +1,53 @@
-<div>
-    <p>tttt</p>
+<div class="p-opensupport-kv">
+    <div class="p-opensupport-kv-top"></div>
+    <div class="p-opensupport-kv-ttl">
+        <p class="p-opensupport-kv-ttl__sml">
+            <img class="p-opensupport__img" src="{{ '/assets/img/kv_ttl_sml.png' | imgPath }}" alt="" width="218">
+        </p>
+        <p class="p-opensupport-kv-ttl__big">
+            <img class="p-opensupport__img" src="{{ '/assets/img/kv_ttl_big.png' | imgPath }}" alt="" width="968">
+        </p>
+    </div>
+    <div class="p-opensupport-kv-content">
+        <p class="p-opensupport-kv-content__top">
+            <img class="p-opensupport__img" src="{{ '/assets/img/kv_cont_top.png' | imgPath }}" alt="" width="509">
+        </p>
+        <div class="p-opensupport-kv-content__buttom">
+            <p>テキストテキストテキストテキストテキストテキスト<br>テキストテキスト</p>
+        </div>
+    </div>
+    <div class="p-opensupport-kv-people">
+        {% set kvPeople = [
+            {
+                img: "kv_people_01.png",
+                alt: "",
+                width: "154"
+            }, {
+                img: "kv_people_02.png",
+                alt: "",
+                width: "161"
+            }, {
+                img: "kv_people_03.png",
+                alt: "",
+                width: "150"
+            }, {
+                img: "kv_people_04.png",
+                alt: "",
+                width: "156"
+            }, {
+                img: "kv_people_05.png",
+                alt: "",
+                width: "127"
+            }, {
+                img: "kv_people_06.png",
+                alt: "",
+                width: "153"
+            }
+        ] %}
+        {% for person in kvPeople %}
+            <div class="p-opensupport-kv-people__item p-opensupport-kv-people__item--{{ loop.index }}" style="width: {{ person.width }}px;">
+                <img src="{{ ('/assets/img/' + person.img) | imgPath }}" alt="{{ person.alt }}">
+            </div>
+        {% endfor %}
+    </div>
 </div>
