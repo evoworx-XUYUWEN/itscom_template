@@ -1,0 +1,23 @@
+{# 注意事項 ================================= #}
+{% set notesItems = [
+	{ text: "注意事項の説明テキスト1" },
+	{ text: "注意事項の説明テキスト2" },
+	{ text: "注意事項の説明テキスト3" },
+	{ text: "注意事項の説明テキスト4" },
+	{ text: "注意事項の説明テキスト5" }
+] %}
+
+<section class="p-pointback-notes">
+	<div class="p-pointback-notes__inner">
+		<div class="p-pointback-notes__head">
+			<h2 class="p-pointback-notes__title">注意事項</h2>
+		</div>
+		<div class="p-pointback-notes__body">
+			<ul class="p-pointback-notes__list">
+				{% for item in notesItems %}
+				<li class="p-pointback-notes__item">{{ item.text }}</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+</section>

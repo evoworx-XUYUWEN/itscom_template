@@ -1,0 +1,39 @@
+.p-sample {
+  padding: 12rem;
+  width: 100%;
+
+  &__heading {
+    @include under_md {
+      @include fz(16, 24);
+    }
+
+    @include md {
+      @include fz(24, 32);
+    }
+  }
+
+  &__text {
+    margin-top: 16px;
+
+    @include md {
+      @include fz(16, 24);
+    }
+  }
+
+  &__img {
+    margin-top: 32px;
+    border: 1px solid $black;
+  }
+
+  // background-imageの記述
+  &__background {
+    margin-top: 32px;
+    border: 1px solid $black;
+    background-image: url($base-dir + "img/sample.png");
+    background-position: center;
+    background-size: cover;
+    background-color: $black;
+    width: 200px;
+    height: 200px;
+  }
+}

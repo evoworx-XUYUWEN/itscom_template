@@ -1,0 +1,54 @@
+{% extends 'layouts/main.njk' %}
+
+{# META ================================= -#}
+{% set pageName = "pointback" -%}
+{% set pageTitle = "ベストブラアワード2025上半期" -%}
+{% set pageDescription = "ここにディスクリプションが入ります" -%}
+{% set pageKeywords = "ワコール,ウイング,ブラジャー,ランキング,人気ブラ,トレンドブラ,アワード,部門別,年代別ランキング,おすすめ" -%}
+
+{# OGP ================================= -#}
+{% set pageOgpImage = "img/share_250710.png" -%}
+
+{# 独自ファイル読み込み ================================= -#}
+{% block file %}{% endblock %}
+
+{% block contents -%}
+	<div id="r2-main-wrap" class="r2-main-wrap">
+		<div id="r2-main" class="r2-main">
+			<div class="r2-breadcrumb">
+				<div class="scroller">
+					<div>
+						<ol>
+							<li>
+								<a href="$httpsUrl('Home-Show')$">
+									<span>TOP</span>
+								</a>
+							</li>
+							<li>
+								<a href="$httpsUrl('Topic-Top')$">
+									<span>トピックス一覧</span>
+								</a>
+							</li>
+							<li>
+								<span>サンプル</span>
+							</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+
+			{# HTML編集可能エリア/ここから ================================= #}
+			<div class="p-pointback">
+				{% include "includes/pointback-kv.njk" %}
+				{% include "includes/pointback-cta.njk" %}
+				{% include "includes/pointback-outline.njk" %}
+				{% include "includes/pointback-howto.njk" %}
+				{% include "includes/pointback-notes.njk" %}
+				{% include "includes/pointback-feature.njk" %}
+			</div>
+			{# HTML編集可能エリア/ここまで ================================= #}
+		</div>
+	</div>
+	<!-- /#r2-main-wrap -->
+
+{% endblock %}

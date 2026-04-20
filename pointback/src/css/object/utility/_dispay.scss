@@ -1,0 +1,17 @@
+.p-sample {
+  .u-sp {
+    display: block;
+
+    @include sp {
+      display: none;
+    }
+  }
+
+  .u-pc {
+		display: none;
+
+		@include md {
+			display: block;
+		}
+  }
+}

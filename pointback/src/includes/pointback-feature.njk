@@ -1,0 +1,56 @@
+{# その他特集 ================================= #}
+{% set featureCards = [
+	{
+		img: "/assets/img/pointback/feature_01.jpg",
+		imgAlt: "特集1",
+		title: "特集タイトル1",
+		text: "特集の説明テキストが入ります1",
+		url: "$httpsUrl('Category-Show')$"
+	},
+	{
+		img: "/assets/img/pointback/feature_02.jpg",
+		imgAlt: "特集2",
+		title: "特集タイトル2",
+		text: "特集の説明テキストが入ります2",
+		url: "$httpsUrl('Category-Show')$"
+	},
+	{
+		img: "/assets/img/pointback/feature_03.jpg",
+		imgAlt: "特集3",
+		title: "特集タイトル3",
+		text: "特集の説明テキストが入ります3",
+		url: "$httpsUrl('Category-Show')$"
+	},
+	{
+		img: "/assets/img/pointback/feature_04.jpg",
+		imgAlt: "特集4",
+		title: "特集タイトル4",
+		text: "特集の説明テキストが入ります4",
+		url: "$httpsUrl('Category-Show')$"
+	}
+] %}
+
+<section class="p-pointback-feature">
+	<div class="p-pointback-feature__inner">
+		<div class="p-pointback-feature__head">
+			<h2 class="p-pointback-feature__title">その他特集</h2>
+		</div>
+		<div class="p-pointback-feature__body">
+			<ul class="p-pointback-feature__list">
+				{% for card in featureCards %}
+				<li class="p-pointback-feature__item">
+					<a class="p-pointback-feature__card" href="{{ card.url }}">
+						<figure class="p-pointback-feature__figure">
+							<img class="p-pointback-feature__img" src="{{ card.img | imgPath }}" alt="{{ card.imgAlt }}">
+						</figure>
+						<div class="p-pointback-feature__content">
+							<h3 class="p-pointback-feature__name">{{ card.title }}</h3>
+							<p class="p-pointback-feature__text">{{ card.text }}</p>
+						</div>
+					</a>
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+</section>

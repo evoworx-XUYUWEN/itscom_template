@@ -1,0 +1,9 @@
+{# CTA ================================= #}
+{% set ctaBtn = {
+	label: "応募フォームはこちら",
+	url: "$httpsUrl('Category-Show')$"
+} %}
+
+<div class="p-pointback-cta">
+	<a class="p-pointback-cta__btn" href="{{ ctaBtn.url }}">{{ ctaBtn.label }}</a>
+</div>

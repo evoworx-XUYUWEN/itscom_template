@@ -1,0 +1,23 @@
+{# 参加方法 ================================= #}
+{% set howtoItems = [
+	{ step: "01", text: "参加方法の説明テキスト1" },
+	{ step: "02", text: "参加方法の説明テキスト2" }
+] %}
+
+<section class="p-pointback-howto">
+	<div class="p-pointback-howto__inner">
+		<div class="p-pointback-howto__head">
+			<h2 class="p-pointback-howto__title">参加方法</h2>
+		</div>
+		<div class="p-pointback-howto__body">
+			<ol class="p-pointback-howto__list">
+				{% for item in howtoItems %}
+				<li class="p-pointback-howto__item">
+					<span class="p-pointback-howto__step">STEP{{ item.step }}</span>
+					<p class="p-pointback-howto__text">{{ item.text }}</p>
+				</li>
+				{% endfor %}
+			</ol>
+		</div>
+	</div>
+</section>

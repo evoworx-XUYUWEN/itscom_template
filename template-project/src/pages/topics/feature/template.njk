@@ -1,0 +1,58 @@
+{% extends 'layouts/main.njk' %}
+
+{# META ================================= -#}
+{% set pageName = "template" -%}
+{% set pageTitle = "ベストブラアワード2025上半期" -%}
+{% set pageDescription = "ここにディスクリプションが入ります" -%}
+{% set pageKeywords = "ワコール,ウイング,ブラジャー,ランキング,人気ブラ,トレンドブラ,アワード,部門別,年代別ランキング,おすすめ" -%}
+
+{# OGP ================================= -#}
+{% set pageOgpImage = "img/share_250710.png" -%}
+
+{# 独自ファイル読み込み ================================= -#}
+{% block file %}{% endblock %}
+
+{% block contents -%}
+	<div id="r2-main-wrap" class="r2-main-wrap">
+		<div id="r2-main" class="r2-main">
+			<div class="r2-breadcrumb">
+				<div class="scroller">
+					<div>
+						<ol>
+							<li>
+								<a href="$httpsUrl('Home-Show')$">
+									<span>TOP</span>
+								</a>
+							</li>
+							<li>
+								<a href="$httpsUrl('Topic-Top')$">
+									<span>トピックス一覧</span>
+								</a>
+							</li>
+							<li>
+								<span>サンプル</span>
+							</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+
+			{# HTML編集可能エリア/ここから ================================= #}
+			<div class="p-sample">
+				<h1 class="p-sample__heading">タイトル</h1>
+				<p class="p-sample__text">テキスト</p>
+
+				<!-- 【hrefの記述】 ステージングでは絶対パス、本番では相対パスに変換されます -->
+				<a href="{{ '/about/' | hrefPath }}">リンク</a>
+
+				<!-- 【srcの記述】 ステージングではルートパス、本番ではassetから始まり語尾に?$staticlink$が付与されます -->
+				<img class="p-sample__img" src="{{ '/assets/img/sample.png' | imgPath }}" alt="">
+
+				<div class="p-sample__background"></div>
+			</div>
+			{# HTML編集可能エリア/ここまで ================================= #}
+		</div>
+	</div>
+	<!-- /#r2-main-wrap -->
+
+{% endblock %}

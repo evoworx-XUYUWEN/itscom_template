@@ -1,0 +1,24 @@
+{# 活動概要 ================================= #}
+{% set outlineItems = [
+	{ text: "概要説明テキスト1" },
+	{ text: "概要説明テキスト2" },
+	{ text: "概要説明テキスト3" },
+	{ text: "概要説明テキスト4" }
+] %}
+
+<section class="p-pointback-outline">
+	<div class="p-pointback-outline__inner">
+		<div class="p-pointback-outline__head">
+			<h2 class="p-pointback-outline__title">活動概要</h2>
+		</div>
+		<div class="p-pointback-outline__body">
+			<div class="p-pointback-outline__box">
+				<ul class="p-pointback-outline__list">
+					{% for item in outlineItems %}
+					<li class="p-pointback-outline__item">{{ item.text }}</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
